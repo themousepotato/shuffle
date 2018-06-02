@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Shuffle
+Version=1.0
+Comment=Play with colour blocks
+GenericName=Shuffle
+Terminal=false
+Icon=/usr/share/icons/shuffle/64x64.png
+Type=Application
+Exec=shuffle
+Categories=Game;LogicGame;
