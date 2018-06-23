@@ -7,20 +7,20 @@ __author__ = 'Navaneeth. S <navaneeths52@gmail.com>'
 __license__ = \
 """
 Shuffle is free software; you can redistribute it and/
-or modify it under the terms of the GNU General 
-Public License as published by the Free Software 
+or modify it under the terms of the GNU General
+Public License as published by the Free Software
 Foundation; either version 2 of the License, or (at your
  option) any later version.
 
-Shuffle is distributed in the hope that it will be 
-useful, but WITHOUT ANY WARRANTY; without even 
-the implied warranty of MERCHANTABILITY or FITNESS 
-FOR A PARTICULAR PURPOSE.  See the GNU General 
+Shuffle is distributed in the hope that it will be
+useful, but WITHOUT ANY WARRANTY; without even
+the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU General
 Public License for more details.
 
-You should have received a copy of the GNU General 
-Public License along with Shuffle; if not, write to the 
-Free Software Foundation, Inc., 51 Franklin Street, 
+You should have received a copy of the GNU General
+Public License along with Shuffle; if not, write to the
+Free Software Foundation, Inc., 51 Franklin Street,
 Fifth Floor, Boston, MA  02110-1301  USA
 """
 
@@ -40,9 +40,12 @@ class Panel(wx.Panel):
 
     def LoadBlocks(self, blocks):
         self.data = []
-        for a in range(blocks): self.data.append(random.randint(0, 1))
+
+        for a in range(blocks):
+            self.data.append(random.randint(0, 1))
 
         grid = wx.FlexGridSizer(5, 5)
+
         for n in range(0, blocks, 1):
             block = wx.Panel(self, size=(75, 75), id=n+1, style=wx.SUNKEN_BORDER)
             block.Bind(wx.EVT_LEFT_DOWN, self.ShufflePairs)
@@ -56,12 +59,18 @@ class Panel(wx.Panel):
 
     def ColourBlocks(self, data):
         for n in range(0, len(self.blocks), 1):
-            if data[n] == 0: self.blocks[n].SetBackgroundColour(self.colours[1])
-            else: self.blocks[n].SetBackgroundColour(self.colours[0])
+            if data[n] == 0:
+                self.blocks[n].SetBackgroundColour(self.colours[1])
+
+            else:
+                self.blocks[n].SetBackgroundColour(self.colours[0])
 
     def Shuffle(self, Obj):
-        if Obj.GetBackgroundColour() == self.colours[0]: Obj.SetBackgroundColour(self.colours[1])
-        else: Obj.SetBackgroundColour(self.colours[0])
+        if Obj.GetBackgroundColour() == self.colours[0]:
+            Obj.SetBackgroundColour(self.colours[1])
+
+        else:
+            Obj.SetBackgroundColour(self.colours[0])
 
     def CheckForResult(self):
         blocks = []
@@ -74,7 +83,9 @@ class Panel(wx.Panel):
             dlg.ShowModal()
 
             self.parent.statusbar.SetStatusText('GAME OVER')
-            for block in self.blocks: block.Enable(False)
+
+            for block in self.blocks:
+                block.Enable(False)
 
     def ShufflePairs(self, event):
         object = event.GetEventObject()
@@ -109,7 +120,10 @@ class Panel(wx.Panel):
             if object is self.blocks[n]:
                 self.moves = int(self.moves)+1
                 self.parent.statusbar.SetStatusText('Moves : %s' % (self.moves))
-                for block in pairs[n]: self.Shuffle(self.blocks[block])
+
+                for block in pairs[n]:
+                    self.Shuffle(self.blocks[block])
+
                 self.CheckForResult()
 
 class MenuBar(wx.MenuBar):
@@ -129,7 +143,9 @@ class MenuBar(wx.MenuBar):
         self.Append(helpmnu, 'Help')
 
         events = [parent.NewGame, parent.Restart, parent.Exit, parent.About]
-        for c in range(0, len(events), 1): parent.Bind(wx.EVT_MENU, events[c], id=c+101)
+
+        for c in range(0, len(events), 1):
+            parent.Bind(wx.EVT_MENU, events[c], id=c+101)
 
 class Frame(wx.Frame):
     def __init__(self, parent=None):
@@ -175,7 +191,10 @@ class Frame(wx.Frame):
         self.timer.Start(20)
         self.next.RefreshStatus()
         self.next.data = []
-        for a in range(len(self.next.blocks)): self.next.data.append(random.randint(0, 1))
+
+        for a in range(len(self.next.blocks)):
+            self.next.data.append(random.randint(0, 1))
+
         self.next.ColourBlocks(self.next.data)
 
     def Restart(self, event):
@@ -193,7 +212,10 @@ class Frame(wx.Frame):
         dlg.SetDescription('A simple game with colour blocks')
         dlg.SetCopyright('Copyright © 2013 Navaneeth. S')
         dlg.SetLicence(__license__[1:])
-        for Set in [dlg.AddDeveloper, dlg.AddDocWriter, dlg.AddArtist, dlg.AddTranslator]: Set(__author__)
+
+        for Set in [dlg.AddDeveloper, dlg.AddDocWriter, dlg.AddArtist, dlg.AddTranslator]:
+            Set(__author__)
+
         wx.AboutBox(dlg)
 
 if __name__=='__main__':
