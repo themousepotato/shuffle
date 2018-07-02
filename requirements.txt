@@ -1,3 +1,0 @@
-Pypubsub==4.0.0
-six==1.11.0
-wxPython==4.0.3
