@@ -42,7 +42,7 @@ It's a fun project to give a skeleton of building simple games with python using
 [(Back to top)](#list-of-contents)
 
 - More formally , fork the code , and clone it your machine .
-  - If you need a python IDE , I recommend using pycharm. [Tutorial to install : ](https://www.youtube.com/watch?v=QzcaEELafkE).
+  - If you need a python IDE , I recommend using pycharm. [Tutorial to install](https://www.youtube.com/watch?v=QzcaEELafkE).
   - If you get an error , make sure all the **import statements are working** , if not , install using pip-install [tutorial](https://www.youtube.com/watch?v=237dNNQhD3Q)
 
 
