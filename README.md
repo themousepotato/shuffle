@@ -5,7 +5,7 @@
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/) 
 
 
-##### To ask doubts and staying in touch , join our ![google group](https://groups.google.com/forum/#!forum/shuffle-devel/)
+##### To ask doubts and staying in touch , join our [google group](https://groups.google.com/forum/#!forum/shuffle-devel/)
 
 
 ## List of contents
@@ -70,4 +70,4 @@ The code in this project is licensed under the GNU General Public License v2.0 -
 ---
 [(Back to top)](#list-of-contents)
 
-Google goup: ![google group](https://groups.google.com/forum/#!forum/shuffle-devel/)
+Google goup: [google group](https://groups.google.com/forum/#!forum/shuffle-devel/)
