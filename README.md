@@ -1,4 +1,4 @@
-# shuffle
+# Shuffle
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/) 
 
 ![Screenshot](https://github.com/TheMousePotato/shuffle/raw/master/screenshot.png)
